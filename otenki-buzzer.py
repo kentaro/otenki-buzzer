@@ -1,6 +1,14 @@
 #!/usr/bin/env python
 
 import OtenkiBuzzer
+import time
 
-d = OtenkiBuzzer.Display()
-d.show()
+disp   = OtenkiBuzzer.Display()
+sensor = OtenkiBuzzer.Sensor()
+
+while True:
+    distance = sensor.check()
+    print(str(distance))
+    disp.show(str(distance))
+
+    time.sleep(1)

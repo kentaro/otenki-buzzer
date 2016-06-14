@@ -10,7 +10,7 @@ class Display(object):
         disp.begin()
         self.disp = disp
 
-    def show(self):
+    def show(self, text):
         self.disp.clear()
 
         width  = self.disp.width
@@ -19,8 +19,7 @@ class Display(object):
         draw   = ImageDraw.Draw(image)
         font = ImageFont.load_default()
 
-        draw.text((10, 10), 'Hello',  font=font, fill=255)
-        draw.text((10, 20), 'World!', font=font, fill=255)
+        draw.text((10, 10), text, font=font, fill=255)
 
         self.disp.image(image)
         self.disp.display()
