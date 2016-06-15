@@ -3,7 +3,7 @@ import time, wiringpi as pi
 SPI_CH  = 0
 READ_CH = 0
 
-class Sensor(object):
+class Sensor:
     def __init__(self):
         pi.wiringPiSPISetup(SPI_CH, 1000000)
 
